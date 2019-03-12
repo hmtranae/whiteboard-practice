@@ -7,6 +7,26 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+// ternary operator
+// function palindrome(str) {
+//     return str === str.split('').reverse().join('') ? true : false
+// }
+
+// function palindrome(str) {
+//     const reversed = str
+//         .split('')
+//         .reverse()
+//         .join('');
+
+//     return reversed === str;
+// }
+
+// use Array.prototype.every()
+// every runs a check given a function on every element in array
+// returns true if every element passes, otherwise false
+function palindrome(str) {
+    // 'racecar' length = 7
+    return str.split('').every((char, i) => char === str[str.length - (i + 1)])
+}
 
 module.exports = palindrome;

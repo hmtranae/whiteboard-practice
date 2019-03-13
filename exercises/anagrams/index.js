@@ -51,7 +51,12 @@ function anagrams(stringA, stringB) {
 }
 
 function sortString(string) {
-    return string.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+    return string
+        .replace(/[^\w]/g, '')
+        .toLowerCase()
+        .split('')
+        .sort()
+        .join('');
 }
 
 module.exports = anagrams;

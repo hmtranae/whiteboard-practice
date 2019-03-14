@@ -8,6 +8,34 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+// Solution 1: Iterative
+function fib(n) {
+    const result = [0, 1];
+
+    for (let i = 2; i <= n; i++) {
+        const a = result[i - 1];
+        const b = result[i - 2];
+        result.push(a + b);
+    }
+    return result[n];
+}
+
+// Solution 2: Recursive
+// function fib(n) {
+//     // if (n === 0) {
+//     //     return 0;
+//     // }
+
+//     // if (n === 1 || n === 2) {
+//     //     return 1;
+//     // }
+
+//     // change two if clauses above because only need first 2 elements
+//     if (n < 2) {
+//         return n;
+//     }
+
+//     return fib(n - 1) + fib(n -2);
+// }
 
 module.exports = fib;

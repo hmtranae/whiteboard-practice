@@ -27,6 +27,18 @@ class LinkedList {
         }
         return count;
     }
+
+    getFirst() {
+        return this.head;
+    }
+
+    getLast() {
+
+    }
+
+    clear() {
+
+    }
 }
 
 const list = new LinkedList();

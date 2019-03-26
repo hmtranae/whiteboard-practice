@@ -36,7 +36,7 @@ class LinkedList {
         if (!this.head) {
             return null;
         }
-        
+
         let node = this.head;
         while (node.next !== null) {
             node = node.next;
@@ -45,7 +45,7 @@ class LinkedList {
     }
 
     clear() {
-
+        this.head = null;
     }
 }
 

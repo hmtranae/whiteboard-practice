@@ -52,12 +52,25 @@ class LinkedList {
         if (!this.head) {
             return;
         }
-        
+
         this.head = this.head.next;
     }
 
     removeLast() {
-
+        if (this.size() === 0) {
+            return;
+        }
+        if (this.size() === 1) {
+            this.head = null;
+            return;
+        }
+        let previous = this.head;
+        let node = this.head.next;
+        while (node.next) {
+            previous = previous.next;
+            node = node.next;
+        }
+        previous.next = null;
     }
 
     insertLast() {

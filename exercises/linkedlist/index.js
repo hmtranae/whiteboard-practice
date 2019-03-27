@@ -134,6 +134,24 @@ class LinkedList {
         let previousNode = this.getAt(index - 1);
         previousNode.next = new Node(data, this.getAt(index));
     }
+
+    forEach(func) {
+        let node = this.head;
+        let counter = 0;
+        while (node) {
+            func(node, counter)
+            node = node.next;
+            counter++;
+        }
+    }
+
+    *[Symbol.iterator]() {
+        let node = this.head;
+        while (node) {
+            yield node;
+            node = node.next;
+        }
+    }
 }
 
 const list = new LinkedList();

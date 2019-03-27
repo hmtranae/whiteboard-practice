@@ -31,6 +31,21 @@ class Tree {
     constructor() {
         this.root = null;
     }
+
+    traverseBF(func) {
+        let array = [this.root];
+        while (array.length) {
+            for (let child of array[0].children) {
+                array.push(child);
+            }
+            let ele = array.shift(0);
+            func(ele);
+        }
+    }
+
+    traverseDF(func) {
+
+    }
 }
 
 module.exports = { Tree, Node };

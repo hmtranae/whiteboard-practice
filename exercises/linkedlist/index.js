@@ -96,8 +96,21 @@ class LinkedList {
         return node;
     }
 
+    // use the getAt method to retrieve the previous node and set that node's next property to be that of index + 1
     removeAt(index) {
-        
+        // if deleting first node, then set head to second node (index 1)
+        if (index === 0) {
+            this.head = this.getAt(1);
+            return;
+        }
+
+        // if no nodes or index out of bounds, just return
+        if (!this.head || index + 1 > this.size()) {
+            return;
+        }
+
+        let previousNode = this.getAt(index - 1);
+        previousNode.next = previousNode.next.next;
     }
 
     insertAt(index) {

@@ -113,8 +113,21 @@ class LinkedList {
         previousNode.next = previousNode.next.next;
     }
 
-    insertAt(index) {
+    // if index if out of bounds, add the node to the end of the list
+    insertAt(data, index) {
+        if (index === 0 || !this.head) {
+            this.head = new Node(data, this.getAt(0));
+            return;
+        }
 
+        const numNodes = this.size();
+        if (index > numNodes - 1) {
+            this.getAt(numNodes - 1).next = new Node(data);
+            return;
+        }
+        
+        let previousNode = this.getAt(index - 1);
+        previousNode.next = new Node(data, this.getAt(index));
     }
 }
 

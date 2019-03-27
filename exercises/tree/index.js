@@ -35,10 +35,8 @@ class Tree {
     traverseBF(func) {
         let array = [this.root];
         while (array.length) {
-            for (let child of array[0].children) {
-                array.push(child);
-            }
-            let ele = array.shift(0);
+            array.push(...array[0].children);
+            let ele = array.shift();
             func(ele);
         }
     }

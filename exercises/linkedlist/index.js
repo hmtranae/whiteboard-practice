@@ -38,7 +38,7 @@ class LinkedList {
         }
 
         let node = this.head;
-        while (node.next !== null) {
+        while (node.next) {
             node = node.next;
         }
         return node;
@@ -80,6 +80,28 @@ class LinkedList {
         } else {
             this.head = new Node(data);
         }
+    }
+
+    getAt(index) {
+        if (!this.head) {
+            return null;
+        }
+
+        let counter = 0;
+        let node = this.head;
+        while (counter !== index) {
+            node = node.next;
+            counter++;
+        }
+        return node;
+    }
+
+    removeAt(index) {
+
+    }
+
+    insertAt(index) {
+
     }
 }
 

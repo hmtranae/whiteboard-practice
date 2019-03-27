@@ -32,6 +32,9 @@ class Tree {
         this.root = null;
     }
 
+    // array contains root node of tree
+    // grab children of root node, push into array and perform fn on first ele
+    // continue as long as array has ele
     traverseBF(func) {
         let array = [this.root];
         while (array.length) {
@@ -41,8 +44,14 @@ class Tree {
         }
     }
 
+    // very similar to bfs but instead of adding to end, ADD TO BEGINNING
     traverseDF(func) {
-
+        let array = [this.root];
+        while (array.length) {
+            let ele = array.shift();
+            func(ele);
+            array.unshift(...ele.children);
+        }
     }
 }
 

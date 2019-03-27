@@ -12,6 +12,20 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+
+// Solving by using two pointers slow and fast just like used in the midpoint of linkedlist solution
+function circular(list) {
+    let slow = list.getFirst();
+    let fast = list.getFirst();
+
+    while (fast.next && fast.next.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (slow === fast) {
+            return true;
+        }
+    }
+    return false;
+}
 
 module.exports = circular;
